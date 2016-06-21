@@ -21,16 +21,16 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo._Fields>, java.io.Serializable, Cloneable {
-  private static final org.apache.thrift7.protocol.TStruct STRUCT_DESC = new org.apache.thrift7.protocol.TStruct("QueueInfo");
+public class QueueInfo implements org.apache.thrift.TBase<QueueInfo, QueueInfo._Fields>, java.io.Serializable, Cloneable {
+  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("QueueInfo");
 
-  private static final org.apache.thrift7.protocol.TField HEAD_ITEM_FIELD_DESC = new org.apache.thrift7.protocol.TField("head_item", org.apache.thrift7.protocol.TType.STRING, (short)1);
-  private static final org.apache.thrift7.protocol.TField ITEMS_FIELD_DESC = new org.apache.thrift7.protocol.TField("items", org.apache.thrift7.protocol.TType.I64, (short)2);
-  private static final org.apache.thrift7.protocol.TField BYTES_FIELD_DESC = new org.apache.thrift7.protocol.TField("bytes", org.apache.thrift7.protocol.TType.I64, (short)3);
-  private static final org.apache.thrift7.protocol.TField JOURNAL_BYTES_FIELD_DESC = new org.apache.thrift7.protocol.TField("journal_bytes", org.apache.thrift7.protocol.TType.I64, (short)4);
-  private static final org.apache.thrift7.protocol.TField AGE_FIELD_DESC = new org.apache.thrift7.protocol.TField("age", org.apache.thrift7.protocol.TType.I64, (short)5);
-  private static final org.apache.thrift7.protocol.TField WAITERS_FIELD_DESC = new org.apache.thrift7.protocol.TField("waiters", org.apache.thrift7.protocol.TType.I32, (short)6);
-  private static final org.apache.thrift7.protocol.TField OPEN_TRANSACTIONS_FIELD_DESC = new org.apache.thrift7.protocol.TField("open_transactions", org.apache.thrift7.protocol.TType.I32, (short)7);
+  private static final org.apache.thrift.protocol.TField HEAD_ITEM_FIELD_DESC = new org.apache.thrift.protocol.TField("head_item", org.apache.thrift.protocol.TType.STRING, (short)1);
+  private static final org.apache.thrift.protocol.TField ITEMS_FIELD_DESC = new org.apache.thrift.protocol.TField("items", org.apache.thrift.protocol.TType.I64, (short)2);
+  private static final org.apache.thrift.protocol.TField BYTES_FIELD_DESC = new org.apache.thrift.protocol.TField("bytes", org.apache.thrift.protocol.TType.I64, (short)3);
+  private static final org.apache.thrift.protocol.TField JOURNAL_BYTES_FIELD_DESC = new org.apache.thrift.protocol.TField("journal_bytes", org.apache.thrift.protocol.TType.I64, (short)4);
+  private static final org.apache.thrift.protocol.TField AGE_FIELD_DESC = new org.apache.thrift.protocol.TField("age", org.apache.thrift.protocol.TType.I64, (short)5);
+  private static final org.apache.thrift.protocol.TField WAITERS_FIELD_DESC = new org.apache.thrift.protocol.TField("waiters", org.apache.thrift.protocol.TType.I32, (short)6);
+  private static final org.apache.thrift.protocol.TField OPEN_TRANSACTIONS_FIELD_DESC = new org.apache.thrift.protocol.TField("open_transactions", org.apache.thrift.protocol.TType.I32, (short)7);
 
   private ByteBuffer head_item; // required
   private long items; // required
@@ -41,7 +41,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
   private int open_transactions; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-  public enum _Fields implements org.apache.thrift7.TFieldIdEnum {
+  public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     HEAD_ITEM((short)1, "head_item"),
     ITEMS((short)2, "items"),
     BYTES((short)3, "bytes"),
@@ -125,25 +125,25 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
   private static final int __OPEN_TRANSACTIONS_ISSET_ID = 5;
   private BitSet __isset_bit_vector = new BitSet(6);
 
-  public static final Map<_Fields, org.apache.thrift7.meta_data.FieldMetaData> metaDataMap;
+  public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
-    Map<_Fields, org.apache.thrift7.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift7.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.HEAD_ITEM, new org.apache.thrift7.meta_data.FieldMetaData("head_item", org.apache.thrift7.TFieldRequirementType.OPTIONAL, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.STRING        , true)));
-    tmpMap.put(_Fields.ITEMS, new org.apache.thrift7.meta_data.FieldMetaData("items", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I64)));
-    tmpMap.put(_Fields.BYTES, new org.apache.thrift7.meta_data.FieldMetaData("bytes", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I64)));
-    tmpMap.put(_Fields.JOURNAL_BYTES, new org.apache.thrift7.meta_data.FieldMetaData("journal_bytes", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I64)));
-    tmpMap.put(_Fields.AGE, new org.apache.thrift7.meta_data.FieldMetaData("age", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I64)));
-    tmpMap.put(_Fields.WAITERS, new org.apache.thrift7.meta_data.FieldMetaData("waiters", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I32)));
-    tmpMap.put(_Fields.OPEN_TRANSACTIONS, new org.apache.thrift7.meta_data.FieldMetaData("open_transactions", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I32)));
+    Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+    tmpMap.put(_Fields.HEAD_ITEM, new org.apache.thrift.meta_data.FieldMetaData("head_item", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING        , true)));
+    tmpMap.put(_Fields.ITEMS, new org.apache.thrift.meta_data.FieldMetaData("items", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
+    tmpMap.put(_Fields.BYTES, new org.apache.thrift.meta_data.FieldMetaData("bytes", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
+    tmpMap.put(_Fields.JOURNAL_BYTES, new org.apache.thrift.meta_data.FieldMetaData("journal_bytes", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
+    tmpMap.put(_Fields.AGE, new org.apache.thrift.meta_data.FieldMetaData("age", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
+    tmpMap.put(_Fields.WAITERS, new org.apache.thrift.meta_data.FieldMetaData("waiters", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+    tmpMap.put(_Fields.OPEN_TRANSACTIONS, new org.apache.thrift.meta_data.FieldMetaData("open_transactions", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
-    org.apache.thrift7.meta_data.FieldMetaData.addStructMetaDataMap(QueueInfo.class, metaDataMap);
+    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(QueueInfo.class, metaDataMap);
   }
 
   public QueueInfo() {
@@ -179,7 +179,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
     __isset_bit_vector.clear();
     __isset_bit_vector.or(other.__isset_bit_vector);
     if (other.is_set_head_item()) {
-      this.head_item = org.apache.thrift7.TBaseHelper.copyBinary(other.head_item);
+      this.head_item = org.apache.thrift.TBaseHelper.copyBinary(other.head_item);
 ;
     }
     this.items = other.items;
@@ -212,7 +212,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
   }
 
   public byte[] get_head_item() {
-    set_head_item(org.apache.thrift7.TBaseHelper.rightSize(head_item));
+    set_head_item(org.apache.thrift.TBaseHelper.rightSize(head_item));
     return head_item == null ? null : head_item.array();
   }
 
@@ -622,7 +622,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_head_item()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.head_item, typedOther.head_item);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.head_item, typedOther.head_item);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -632,7 +632,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_items()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.items, typedOther.items);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.items, typedOther.items);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -642,7 +642,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_bytes()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.bytes, typedOther.bytes);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.bytes, typedOther.bytes);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -652,7 +652,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_journal_bytes()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.journal_bytes, typedOther.journal_bytes);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.journal_bytes, typedOther.journal_bytes);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -662,7 +662,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_age()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.age, typedOther.age);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.age, typedOther.age);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -672,7 +672,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_waiters()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.waiters, typedOther.waiters);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.waiters, typedOther.waiters);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -682,7 +682,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       return lastComparison;
     }
     if (is_set_open_transactions()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.open_transactions, typedOther.open_transactions);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.open_transactions, typedOther.open_transactions);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -694,73 +694,73 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
     return _Fields.findByThriftId(fieldId);
   }
 
-  public void read(org.apache.thrift7.protocol.TProtocol iprot) throws org.apache.thrift7.TException {
-    org.apache.thrift7.protocol.TField field;
+  public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+    org.apache.thrift.protocol.TField field;
     iprot.readStructBegin();
     while (true)
     {
       field = iprot.readFieldBegin();
-      if (field.type == org.apache.thrift7.protocol.TType.STOP) { 
+      if (field.type == org.apache.thrift.protocol.TType.STOP) { 
         break;
       }
       switch (field.id) {
         case 1: // HEAD_ITEM
-          if (field.type == org.apache.thrift7.protocol.TType.STRING) {
+          if (field.type == org.apache.thrift.protocol.TType.STRING) {
             this.head_item = iprot.readBinary();
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 2: // ITEMS
-          if (field.type == org.apache.thrift7.protocol.TType.I64) {
+          if (field.type == org.apache.thrift.protocol.TType.I64) {
             this.items = iprot.readI64();
             set_items_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 3: // BYTES
-          if (field.type == org.apache.thrift7.protocol.TType.I64) {
+          if (field.type == org.apache.thrift.protocol.TType.I64) {
             this.bytes = iprot.readI64();
             set_bytes_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 4: // JOURNAL_BYTES
-          if (field.type == org.apache.thrift7.protocol.TType.I64) {
+          if (field.type == org.apache.thrift.protocol.TType.I64) {
             this.journal_bytes = iprot.readI64();
             set_journal_bytes_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 5: // AGE
-          if (field.type == org.apache.thrift7.protocol.TType.I64) {
+          if (field.type == org.apache.thrift.protocol.TType.I64) {
             this.age = iprot.readI64();
             set_age_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 6: // WAITERS
-          if (field.type == org.apache.thrift7.protocol.TType.I32) {
+          if (field.type == org.apache.thrift.protocol.TType.I32) {
             this.waiters = iprot.readI32();
             set_waiters_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 7: // OPEN_TRANSACTIONS
-          if (field.type == org.apache.thrift7.protocol.TType.I32) {
+          if (field.type == org.apache.thrift.protocol.TType.I32) {
             this.open_transactions = iprot.readI32();
             set_open_transactions_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         default:
-          org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+          org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
       }
       iprot.readFieldEnd();
     }
@@ -768,7 +768,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
     validate();
   }
 
-  public void write(org.apache.thrift7.protocol.TProtocol oprot) throws org.apache.thrift7.TException {
+  public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     validate();
 
     oprot.writeStructBegin(STRUCT_DESC);
@@ -811,7 +811,7 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
       if (this.head_item == null) {
         sb.append("null");
       } else {
-        org.apache.thrift7.TBaseHelper.toString(this.head_item, sb);
+        org.apache.thrift.TBaseHelper.toString(this.head_item, sb);
       }
       first = false;
     }
@@ -843,14 +843,14 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
     return sb.toString();
   }
 
-  public void validate() throws org.apache.thrift7.TException {
+  public void validate() throws org.apache.thrift.TException {
     // check for required fields
   }
 
   private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
     try {
-      write(new org.apache.thrift7.protocol.TCompactProtocol(new org.apache.thrift7.transport.TIOStreamTransport(out)));
-    } catch (org.apache.thrift7.TException te) {
+      write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+    } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
     }
   }
@@ -859,8 +859,8 @@ public class QueueInfo implements org.apache.thrift7.TBase<QueueInfo, QueueInfo.
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bit_vector = new BitSet(1);
-      read(new org.apache.thrift7.protocol.TCompactProtocol(new org.apache.thrift7.transport.TIOStreamTransport(in)));
-    } catch (org.apache.thrift7.TException te) {
+      read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+    } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
     }
   }

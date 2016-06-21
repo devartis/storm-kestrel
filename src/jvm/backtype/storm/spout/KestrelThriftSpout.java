@@ -12,7 +12,7 @@ import java.util.Queue;
 import net.lag.kestrel.thrift.Item;
 
 import org.apache.log4j.Logger;
-import org.apache.thrift7.TException;
+import org.apache.thrift.TException;
 
 import backtype.storm.Config;
 import backtype.storm.task.TopologyContext;

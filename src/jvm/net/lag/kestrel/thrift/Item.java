@@ -21,17 +21,17 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.io.Serializable, Cloneable {
-  private static final org.apache.thrift7.protocol.TStruct STRUCT_DESC = new org.apache.thrift7.protocol.TStruct("Item");
+public class Item implements org.apache.thrift.TBase<Item, Item._Fields>, java.io.Serializable, Cloneable {
+  private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("Item");
 
-  private static final org.apache.thrift7.protocol.TField DATA_FIELD_DESC = new org.apache.thrift7.protocol.TField("data", org.apache.thrift7.protocol.TType.STRING, (short)1);
-  private static final org.apache.thrift7.protocol.TField ID_FIELD_DESC = new org.apache.thrift7.protocol.TField("id", org.apache.thrift7.protocol.TType.I64, (short)2);
+  private static final org.apache.thrift.protocol.TField DATA_FIELD_DESC = new org.apache.thrift.protocol.TField("data", org.apache.thrift.protocol.TType.STRING, (short)1);
+  private static final org.apache.thrift.protocol.TField ID_FIELD_DESC = new org.apache.thrift.protocol.TField("id", org.apache.thrift.protocol.TType.I64, (short)2);
 
   private ByteBuffer data; // required
   private long id; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-  public enum _Fields implements org.apache.thrift7.TFieldIdEnum {
+  public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     DATA((short)1, "data"),
     ID((short)2, "id");
 
@@ -95,15 +95,15 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
   private static final int __ID_ISSET_ID = 0;
   private BitSet __isset_bit_vector = new BitSet(1);
 
-  public static final Map<_Fields, org.apache.thrift7.meta_data.FieldMetaData> metaDataMap;
+  public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
-    Map<_Fields, org.apache.thrift7.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift7.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.DATA, new org.apache.thrift7.meta_data.FieldMetaData("data", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.STRING        , true)));
-    tmpMap.put(_Fields.ID, new org.apache.thrift7.meta_data.FieldMetaData("id", org.apache.thrift7.TFieldRequirementType.DEFAULT, 
-        new org.apache.thrift7.meta_data.FieldValueMetaData(org.apache.thrift7.protocol.TType.I64)));
+    Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+    tmpMap.put(_Fields.DATA, new org.apache.thrift.meta_data.FieldMetaData("data", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING        , true)));
+    tmpMap.put(_Fields.ID, new org.apache.thrift.meta_data.FieldMetaData("id", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
-    org.apache.thrift7.meta_data.FieldMetaData.addStructMetaDataMap(Item.class, metaDataMap);
+    org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(Item.class, metaDataMap);
   }
 
   public Item() {
@@ -126,7 +126,7 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
     __isset_bit_vector.clear();
     __isset_bit_vector.or(other.__isset_bit_vector);
     if (other.is_set_data()) {
-      this.data = org.apache.thrift7.TBaseHelper.copyBinary(other.data);
+      this.data = org.apache.thrift.TBaseHelper.copyBinary(other.data);
 ;
     }
     this.id = other.id;
@@ -144,7 +144,7 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
   }
 
   public byte[] get_data() {
-    set_data(org.apache.thrift7.TBaseHelper.rightSize(data));
+    set_data(org.apache.thrift.TBaseHelper.rightSize(data));
     return data == null ? null : data.array();
   }
 
@@ -309,7 +309,7 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
       return lastComparison;
     }
     if (is_set_data()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.data, typedOther.data);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.data, typedOther.data);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -319,7 +319,7 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
       return lastComparison;
     }
     if (is_set_id()) {
-      lastComparison = org.apache.thrift7.TBaseHelper.compareTo(this.id, typedOther.id);
+      lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.id, typedOther.id);
       if (lastComparison != 0) {
         return lastComparison;
       }
@@ -331,33 +331,33 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
     return _Fields.findByThriftId(fieldId);
   }
 
-  public void read(org.apache.thrift7.protocol.TProtocol iprot) throws org.apache.thrift7.TException {
-    org.apache.thrift7.protocol.TField field;
+  public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+    org.apache.thrift.protocol.TField field;
     iprot.readStructBegin();
     while (true)
     {
       field = iprot.readFieldBegin();
-      if (field.type == org.apache.thrift7.protocol.TType.STOP) { 
+      if (field.type == org.apache.thrift.protocol.TType.STOP) { 
         break;
       }
       switch (field.id) {
         case 1: // DATA
-          if (field.type == org.apache.thrift7.protocol.TType.STRING) {
+          if (field.type == org.apache.thrift.protocol.TType.STRING) {
             this.data = iprot.readBinary();
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         case 2: // ID
-          if (field.type == org.apache.thrift7.protocol.TType.I64) {
+          if (field.type == org.apache.thrift.protocol.TType.I64) {
             this.id = iprot.readI64();
             set_id_isSet(true);
           } else { 
-            org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
           }
           break;
         default:
-          org.apache.thrift7.protocol.TProtocolUtil.skip(iprot, field.type);
+          org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
       }
       iprot.readFieldEnd();
     }
@@ -365,7 +365,7 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
     validate();
   }
 
-  public void write(org.apache.thrift7.protocol.TProtocol oprot) throws org.apache.thrift7.TException {
+  public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     validate();
 
     oprot.writeStructBegin(STRUCT_DESC);
@@ -390,7 +390,7 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
     if (this.data == null) {
       sb.append("null");
     } else {
-      org.apache.thrift7.TBaseHelper.toString(this.data, sb);
+      org.apache.thrift.TBaseHelper.toString(this.data, sb);
     }
     first = false;
     if (!first) sb.append(", ");
@@ -401,14 +401,14 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
     return sb.toString();
   }
 
-  public void validate() throws org.apache.thrift7.TException {
+  public void validate() throws org.apache.thrift.TException {
     // check for required fields
   }
 
   private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
     try {
-      write(new org.apache.thrift7.protocol.TCompactProtocol(new org.apache.thrift7.transport.TIOStreamTransport(out)));
-    } catch (org.apache.thrift7.TException te) {
+      write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+    } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
     }
   }
@@ -417,8 +417,8 @@ public class Item implements org.apache.thrift7.TBase<Item, Item._Fields>, java.
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bit_vector = new BitSet(1);
-      read(new org.apache.thrift7.protocol.TCompactProtocol(new org.apache.thrift7.transport.TIOStreamTransport(in)));
-    } catch (org.apache.thrift7.TException te) {
+      read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+    } catch (org.apache.thrift.TException te) {
       throw new java.io.IOException(te);
     }
   }
