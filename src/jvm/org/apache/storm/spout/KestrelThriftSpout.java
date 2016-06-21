@@ -1,4 +1,4 @@
-package backtype.storm.spout;
+package org.apache.storm.spout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,14 +12,14 @@ import java.util.Queue;
 import net.lag.kestrel.thrift.Item;
 
 import org.apache.log4j.Logger;
-import org.apache.thrift.TException;
+import org.apache.storm.thrift.TException;
 
-import backtype.storm.Config;
-import backtype.storm.task.TopologyContext;
-import backtype.storm.topology.OutputFieldsDeclarer;
-import backtype.storm.topology.base.BaseRichSpout;
-import backtype.storm.tuple.Fields;
-import backtype.storm.utils.Utils;
+import org.apache.storm.Config;
+import org.apache.storm.task.TopologyContext;
+import org.apache.storm.topology.OutputFieldsDeclarer;
+import org.apache.storm.topology.base.BaseRichSpout;
+import org.apache.storm.tuple.Fields;
+import org.apache.storm.utils.Utils;
 
 
 /**
@@ -184,7 +184,7 @@ public class KestrelThriftSpout extends BaseRichSpout {
             HashSet toAck = new HashSet();
 
             for(Item item : items) {
-                Iterable<List<Object>> retItems = _scheme.deserialize(item.get_data());
+                Iterable<List<Object>> retItems = _scheme.deserialize(item.buffer_for_data());
 
                 if (retItems != null) {
                     for(List<Object> retItem: retItems) {

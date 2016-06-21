@@ -1,4 +1,4 @@
-package backtype.storm.spout;
+package org.apache.storm.spout;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import net.lag.kestrel.thrift.*;
 import java.util.List;
 import java.util.Set;
-import org.apache.thrift.TException;
-import org.apache.thrift.protocol.TBinaryProtocol;
-import org.apache.thrift.protocol.TProtocol;
-import org.apache.thrift.transport.TFramedTransport;
-import org.apache.thrift.transport.TSocket;
-import org.apache.thrift.transport.TTransport;
+import org.apache.storm.thrift.TException;
+import org.apache.storm.thrift.protocol.TBinaryProtocol;
+import org.apache.storm.thrift.protocol.TProtocol;
+import org.apache.storm.thrift.transport.TFramedTransport;
+import org.apache.storm.thrift.transport.TSocket;
+import org.apache.storm.thrift.transport.TTransport;
 
 /* Thin wrapper around Thrift Client for Kestrel */
 public class KestrelThriftClient implements Kestrel.Iface {

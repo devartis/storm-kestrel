@@ -25,75 +25,75 @@ public class Kestrel {
 
   public interface Iface {
 
-    public int put(String queue_name, List<ByteBuffer> items, int expiration_msec) throws org.apache.thrift.TException;
+    public int put(String queue_name, List<ByteBuffer> items, int expiration_msec) throws org.apache.storm.thrift.TException;
 
-    public List<Item> get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec) throws org.apache.thrift.TException;
+    public List<Item> get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec) throws org.apache.storm.thrift.TException;
 
-    public int confirm(String queue_name, Set<Long> ids) throws org.apache.thrift.TException;
+    public int confirm(String queue_name, Set<Long> ids) throws org.apache.storm.thrift.TException;
 
-    public int abort(String queue_name, Set<Long> ids) throws org.apache.thrift.TException;
+    public int abort(String queue_name, Set<Long> ids) throws org.apache.storm.thrift.TException;
 
-    public QueueInfo peek(String queue_name) throws org.apache.thrift.TException;
+    public QueueInfo peek(String queue_name) throws org.apache.storm.thrift.TException;
 
-    public void flush_queue(String queue_name) throws org.apache.thrift.TException;
+    public void flush_queue(String queue_name) throws org.apache.storm.thrift.TException;
 
-    public void flush_all_queues() throws org.apache.thrift.TException;
+    public void flush_all_queues() throws org.apache.storm.thrift.TException;
 
-    public void delete_queue(String queue_name) throws org.apache.thrift.TException;
+    public void delete_queue(String queue_name) throws org.apache.storm.thrift.TException;
 
-    public String get_version() throws org.apache.thrift.TException;
+    public String get_version() throws org.apache.storm.thrift.TException;
 
   }
 
   public interface AsyncIface {
 
-    public void put(String queue_name, List<ByteBuffer> items, int expiration_msec, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.put_call> resultHandler) throws org.apache.thrift.TException;
+    public void put(String queue_name, List<ByteBuffer> items, int expiration_msec, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.put_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.get_call> resultHandler) throws org.apache.thrift.TException;
+    public void get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.get_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void confirm(String queue_name, Set<Long> ids, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.confirm_call> resultHandler) throws org.apache.thrift.TException;
+    public void confirm(String queue_name, Set<Long> ids, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.confirm_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void abort(String queue_name, Set<Long> ids, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.abort_call> resultHandler) throws org.apache.thrift.TException;
+    public void abort(String queue_name, Set<Long> ids, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.abort_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void peek(String queue_name, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.peek_call> resultHandler) throws org.apache.thrift.TException;
+    public void peek(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.peek_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void flush_queue(String queue_name, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.flush_queue_call> resultHandler) throws org.apache.thrift.TException;
+    public void flush_queue(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.flush_queue_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void flush_all_queues(org.apache.thrift.async.AsyncMethodCallback<AsyncClient.flush_all_queues_call> resultHandler) throws org.apache.thrift.TException;
+    public void flush_all_queues(org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.flush_all_queues_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void delete_queue(String queue_name, org.apache.thrift.async.AsyncMethodCallback<AsyncClient.delete_queue_call> resultHandler) throws org.apache.thrift.TException;
+    public void delete_queue(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.delete_queue_call> resultHandler) throws org.apache.storm.thrift.TException;
 
-    public void get_version(org.apache.thrift.async.AsyncMethodCallback<AsyncClient.get_version_call> resultHandler) throws org.apache.thrift.TException;
+    public void get_version(org.apache.storm.thrift.async.AsyncMethodCallback<AsyncClient.get_version_call> resultHandler) throws org.apache.storm.thrift.TException;
 
   }
 
-  public static class Client extends org.apache.thrift.TServiceClient implements Iface {
-    public static class Factory implements org.apache.thrift.TServiceClientFactory<Client> {
+  public static class Client extends org.apache.storm.thrift.TServiceClient implements Iface {
+    public static class Factory implements org.apache.storm.thrift.TServiceClientFactory<Client> {
       public Factory() {}
-      public Client getClient(org.apache.thrift.protocol.TProtocol prot) {
+      public Client getClient(org.apache.storm.thrift.protocol.TProtocol prot) {
         return new Client(prot);
       }
-      public Client getClient(org.apache.thrift.protocol.TProtocol iprot, org.apache.thrift.protocol.TProtocol oprot) {
+      public Client getClient(org.apache.storm.thrift.protocol.TProtocol iprot, org.apache.storm.thrift.protocol.TProtocol oprot) {
         return new Client(iprot, oprot);
       }
     }
 
-    public Client(org.apache.thrift.protocol.TProtocol prot)
+    public Client(org.apache.storm.thrift.protocol.TProtocol prot)
     {
       super(prot, prot);
     }
 
-    public Client(org.apache.thrift.protocol.TProtocol iprot, org.apache.thrift.protocol.TProtocol oprot) {
+    public Client(org.apache.storm.thrift.protocol.TProtocol iprot, org.apache.storm.thrift.protocol.TProtocol oprot) {
       super(iprot, oprot);
     }
 
-    public int put(String queue_name, List<ByteBuffer> items, int expiration_msec) throws org.apache.thrift.TException
+    public int put(String queue_name, List<ByteBuffer> items, int expiration_msec) throws org.apache.storm.thrift.TException
     {
       send_put(queue_name, items, expiration_msec);
       return recv_put();
     }
 
-    public void send_put(String queue_name, List<ByteBuffer> items, int expiration_msec) throws org.apache.thrift.TException
+    public void send_put(String queue_name, List<ByteBuffer> items, int expiration_msec) throws org.apache.storm.thrift.TException
     {
       put_args args = new put_args();
       args.set_queue_name(queue_name);
@@ -102,23 +102,23 @@ public class Kestrel {
       sendBase("put", args);
     }
 
-    public int recv_put() throws org.apache.thrift.TException
+    public int recv_put() throws org.apache.storm.thrift.TException
     {
       put_result result = new put_result();
       receiveBase(result, "put");
       if (result.is_set_success()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "put failed: unknown result");
+      throw new org.apache.storm.thrift.TApplicationException(org.apache.storm.thrift.TApplicationException.MISSING_RESULT, "put failed: unknown result");
     }
 
-    public List<Item> get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec) throws org.apache.thrift.TException
+    public List<Item> get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec) throws org.apache.storm.thrift.TException
     {
       send_get(queue_name, max_items, timeout_msec, auto_abort_msec);
       return recv_get();
     }
 
-    public void send_get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec) throws org.apache.thrift.TException
+    public void send_get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec) throws org.apache.storm.thrift.TException
     {
       get_args args = new get_args();
       args.set_queue_name(queue_name);
@@ -128,23 +128,23 @@ public class Kestrel {
       sendBase("get", args);
     }
 
-    public List<Item> recv_get() throws org.apache.thrift.TException
+    public List<Item> recv_get() throws org.apache.storm.thrift.TException
     {
       get_result result = new get_result();
       receiveBase(result, "get");
       if (result.is_set_success()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "get failed: unknown result");
+      throw new org.apache.storm.thrift.TApplicationException(org.apache.storm.thrift.TApplicationException.MISSING_RESULT, "get failed: unknown result");
     }
 
-    public int confirm(String queue_name, Set<Long> ids) throws org.apache.thrift.TException
+    public int confirm(String queue_name, Set<Long> ids) throws org.apache.storm.thrift.TException
     {
       send_confirm(queue_name, ids);
       return recv_confirm();
     }
 
-    public void send_confirm(String queue_name, Set<Long> ids) throws org.apache.thrift.TException
+    public void send_confirm(String queue_name, Set<Long> ids) throws org.apache.storm.thrift.TException
     {
       confirm_args args = new confirm_args();
       args.set_queue_name(queue_name);
@@ -152,23 +152,23 @@ public class Kestrel {
       sendBase("confirm", args);
     }
 
-    public int recv_confirm() throws org.apache.thrift.TException
+    public int recv_confirm() throws org.apache.storm.thrift.TException
     {
       confirm_result result = new confirm_result();
       receiveBase(result, "confirm");
       if (result.is_set_success()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "confirm failed: unknown result");
+      throw new org.apache.storm.thrift.TApplicationException(org.apache.storm.thrift.TApplicationException.MISSING_RESULT, "confirm failed: unknown result");
     }
 
-    public int abort(String queue_name, Set<Long> ids) throws org.apache.thrift.TException
+    public int abort(String queue_name, Set<Long> ids) throws org.apache.storm.thrift.TException
     {
       send_abort(queue_name, ids);
       return recv_abort();
     }
 
-    public void send_abort(String queue_name, Set<Long> ids) throws org.apache.thrift.TException
+    public void send_abort(String queue_name, Set<Long> ids) throws org.apache.storm.thrift.TException
     {
       abort_args args = new abort_args();
       args.set_queue_name(queue_name);
@@ -176,158 +176,158 @@ public class Kestrel {
       sendBase("abort", args);
     }
 
-    public int recv_abort() throws org.apache.thrift.TException
+    public int recv_abort() throws org.apache.storm.thrift.TException
     {
       abort_result result = new abort_result();
       receiveBase(result, "abort");
       if (result.is_set_success()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "abort failed: unknown result");
+      throw new org.apache.storm.thrift.TApplicationException(org.apache.storm.thrift.TApplicationException.MISSING_RESULT, "abort failed: unknown result");
     }
 
-    public QueueInfo peek(String queue_name) throws org.apache.thrift.TException
+    public QueueInfo peek(String queue_name) throws org.apache.storm.thrift.TException
     {
       send_peek(queue_name);
       return recv_peek();
     }
 
-    public void send_peek(String queue_name) throws org.apache.thrift.TException
+    public void send_peek(String queue_name) throws org.apache.storm.thrift.TException
     {
       peek_args args = new peek_args();
       args.set_queue_name(queue_name);
       sendBase("peek", args);
     }
 
-    public QueueInfo recv_peek() throws org.apache.thrift.TException
+    public QueueInfo recv_peek() throws org.apache.storm.thrift.TException
     {
       peek_result result = new peek_result();
       receiveBase(result, "peek");
       if (result.is_set_success()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "peek failed: unknown result");
+      throw new org.apache.storm.thrift.TApplicationException(org.apache.storm.thrift.TApplicationException.MISSING_RESULT, "peek failed: unknown result");
     }
 
-    public void flush_queue(String queue_name) throws org.apache.thrift.TException
+    public void flush_queue(String queue_name) throws org.apache.storm.thrift.TException
     {
       send_flush_queue(queue_name);
       recv_flush_queue();
     }
 
-    public void send_flush_queue(String queue_name) throws org.apache.thrift.TException
+    public void send_flush_queue(String queue_name) throws org.apache.storm.thrift.TException
     {
       flush_queue_args args = new flush_queue_args();
       args.set_queue_name(queue_name);
       sendBase("flush_queue", args);
     }
 
-    public void recv_flush_queue() throws org.apache.thrift.TException
+    public void recv_flush_queue() throws org.apache.storm.thrift.TException
     {
       flush_queue_result result = new flush_queue_result();
       receiveBase(result, "flush_queue");
       return;
     }
 
-    public void flush_all_queues() throws org.apache.thrift.TException
+    public void flush_all_queues() throws org.apache.storm.thrift.TException
     {
       send_flush_all_queues();
       recv_flush_all_queues();
     }
 
-    public void send_flush_all_queues() throws org.apache.thrift.TException
+    public void send_flush_all_queues() throws org.apache.storm.thrift.TException
     {
       flush_all_queues_args args = new flush_all_queues_args();
       sendBase("flush_all_queues", args);
     }
 
-    public void recv_flush_all_queues() throws org.apache.thrift.TException
+    public void recv_flush_all_queues() throws org.apache.storm.thrift.TException
     {
       flush_all_queues_result result = new flush_all_queues_result();
       receiveBase(result, "flush_all_queues");
       return;
     }
 
-    public void delete_queue(String queue_name) throws org.apache.thrift.TException
+    public void delete_queue(String queue_name) throws org.apache.storm.thrift.TException
     {
       send_delete_queue(queue_name);
       recv_delete_queue();
     }
 
-    public void send_delete_queue(String queue_name) throws org.apache.thrift.TException
+    public void send_delete_queue(String queue_name) throws org.apache.storm.thrift.TException
     {
       delete_queue_args args = new delete_queue_args();
       args.set_queue_name(queue_name);
       sendBase("delete_queue", args);
     }
 
-    public void recv_delete_queue() throws org.apache.thrift.TException
+    public void recv_delete_queue() throws org.apache.storm.thrift.TException
     {
       delete_queue_result result = new delete_queue_result();
       receiveBase(result, "delete_queue");
       return;
     }
 
-    public String get_version() throws org.apache.thrift.TException
+    public String get_version() throws org.apache.storm.thrift.TException
     {
       send_get_version();
       return recv_get_version();
     }
 
-    public void send_get_version() throws org.apache.thrift.TException
+    public void send_get_version() throws org.apache.storm.thrift.TException
     {
       get_version_args args = new get_version_args();
       sendBase("get_version", args);
     }
 
-    public String recv_get_version() throws org.apache.thrift.TException
+    public String recv_get_version() throws org.apache.storm.thrift.TException
     {
       get_version_result result = new get_version_result();
       receiveBase(result, "get_version");
       if (result.is_set_success()) {
         return result.success;
       }
-      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "get_version failed: unknown result");
+      throw new org.apache.storm.thrift.TApplicationException(org.apache.storm.thrift.TApplicationException.MISSING_RESULT, "get_version failed: unknown result");
     }
 
   }
-  public static class AsyncClient extends org.apache.thrift.async.TAsyncClient implements AsyncIface {
-    public static class Factory implements org.apache.thrift.async.TAsyncClientFactory<AsyncClient> {
-      private org.apache.thrift.async.TAsyncClientManager clientManager;
-      private org.apache.thrift.protocol.TProtocolFactory protocolFactory;
-      public Factory(org.apache.thrift.async.TAsyncClientManager clientManager, org.apache.thrift.protocol.TProtocolFactory protocolFactory) {
+  public static class AsyncClient extends org.apache.storm.thrift.async.TAsyncClient implements AsyncIface {
+    public static class Factory implements org.apache.storm.thrift.async.TAsyncClientFactory<AsyncClient> {
+      private org.apache.storm.thrift.async.TAsyncClientManager clientManager;
+      private org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory;
+      public Factory(org.apache.storm.thrift.async.TAsyncClientManager clientManager, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory) {
         this.clientManager = clientManager;
         this.protocolFactory = protocolFactory;
       }
-      public AsyncClient getAsyncClient(org.apache.thrift.transport.TNonblockingTransport transport) {
+      public AsyncClient getAsyncClient(org.apache.storm.thrift.transport.TNonblockingTransport transport) {
         return new AsyncClient(protocolFactory, clientManager, transport);
       }
     }
 
-    public AsyncClient(org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.async.TAsyncClientManager clientManager, org.apache.thrift.transport.TNonblockingTransport transport) {
+    public AsyncClient(org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.async.TAsyncClientManager clientManager, org.apache.storm.thrift.transport.TNonblockingTransport transport) {
       super(protocolFactory, clientManager, transport);
     }
 
-    public void put(String queue_name, List<ByteBuffer> items, int expiration_msec, org.apache.thrift.async.AsyncMethodCallback<put_call> resultHandler) throws org.apache.thrift.TException {
+    public void put(String queue_name, List<ByteBuffer> items, int expiration_msec, org.apache.storm.thrift.async.AsyncMethodCallback<put_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       put_call method_call = new put_call(queue_name, items, expiration_msec, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class put_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class put_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
       private List<ByteBuffer> items;
       private int expiration_msec;
-      public put_call(String queue_name, List<ByteBuffer> items, int expiration_msec, org.apache.thrift.async.AsyncMethodCallback<put_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public put_call(String queue_name, List<ByteBuffer> items, int expiration_msec, org.apache.storm.thrift.async.AsyncMethodCallback<put_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
         this.items = items;
         this.expiration_msec = expiration_msec;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("put", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("put", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         put_args args = new put_args();
         args.set_queue_name(queue_name);
         args.set_items(items);
@@ -336,29 +336,29 @@ public class Kestrel {
         prot.writeMessageEnd();
       }
 
-      public int getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public int getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_put();
       }
     }
 
-    public void get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec, org.apache.thrift.async.AsyncMethodCallback<get_call> resultHandler) throws org.apache.thrift.TException {
+    public void get(String queue_name, int max_items, int timeout_msec, int auto_abort_msec, org.apache.storm.thrift.async.AsyncMethodCallback<get_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       get_call method_call = new get_call(queue_name, max_items, timeout_msec, auto_abort_msec, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class get_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class get_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
       private int max_items;
       private int timeout_msec;
       private int auto_abort_msec;
-      public get_call(String queue_name, int max_items, int timeout_msec, int auto_abort_msec, org.apache.thrift.async.AsyncMethodCallback<get_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public get_call(String queue_name, int max_items, int timeout_msec, int auto_abort_msec, org.apache.storm.thrift.async.AsyncMethodCallback<get_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
         this.max_items = max_items;
@@ -366,8 +366,8 @@ public class Kestrel {
         this.auto_abort_msec = auto_abort_msec;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("get", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("get", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         get_args args = new get_args();
         args.set_queue_name(queue_name);
         args.set_max_items(max_items);
@@ -377,34 +377,34 @@ public class Kestrel {
         prot.writeMessageEnd();
       }
 
-      public List<Item> getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public List<Item> getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_get();
       }
     }
 
-    public void confirm(String queue_name, Set<Long> ids, org.apache.thrift.async.AsyncMethodCallback<confirm_call> resultHandler) throws org.apache.thrift.TException {
+    public void confirm(String queue_name, Set<Long> ids, org.apache.storm.thrift.async.AsyncMethodCallback<confirm_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       confirm_call method_call = new confirm_call(queue_name, ids, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class confirm_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class confirm_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
       private Set<Long> ids;
-      public confirm_call(String queue_name, Set<Long> ids, org.apache.thrift.async.AsyncMethodCallback<confirm_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public confirm_call(String queue_name, Set<Long> ids, org.apache.storm.thrift.async.AsyncMethodCallback<confirm_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
         this.ids = ids;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("confirm", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("confirm", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         confirm_args args = new confirm_args();
         args.set_queue_name(queue_name);
         args.set_ids(ids);
@@ -412,34 +412,34 @@ public class Kestrel {
         prot.writeMessageEnd();
       }
 
-      public int getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public int getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_confirm();
       }
     }
 
-    public void abort(String queue_name, Set<Long> ids, org.apache.thrift.async.AsyncMethodCallback<abort_call> resultHandler) throws org.apache.thrift.TException {
+    public void abort(String queue_name, Set<Long> ids, org.apache.storm.thrift.async.AsyncMethodCallback<abort_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       abort_call method_call = new abort_call(queue_name, ids, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class abort_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class abort_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
       private Set<Long> ids;
-      public abort_call(String queue_name, Set<Long> ids, org.apache.thrift.async.AsyncMethodCallback<abort_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public abort_call(String queue_name, Set<Long> ids, org.apache.storm.thrift.async.AsyncMethodCallback<abort_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
         this.ids = ids;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("abort", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("abort", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         abort_args args = new abort_args();
         args.set_queue_name(queue_name);
         args.set_ids(ids);
@@ -447,183 +447,183 @@ public class Kestrel {
         prot.writeMessageEnd();
       }
 
-      public int getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public int getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_abort();
       }
     }
 
-    public void peek(String queue_name, org.apache.thrift.async.AsyncMethodCallback<peek_call> resultHandler) throws org.apache.thrift.TException {
+    public void peek(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<peek_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       peek_call method_call = new peek_call(queue_name, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class peek_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class peek_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
-      public peek_call(String queue_name, org.apache.thrift.async.AsyncMethodCallback<peek_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public peek_call(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<peek_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("peek", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("peek", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         peek_args args = new peek_args();
         args.set_queue_name(queue_name);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public QueueInfo getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public QueueInfo getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_peek();
       }
     }
 
-    public void flush_queue(String queue_name, org.apache.thrift.async.AsyncMethodCallback<flush_queue_call> resultHandler) throws org.apache.thrift.TException {
+    public void flush_queue(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<flush_queue_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       flush_queue_call method_call = new flush_queue_call(queue_name, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class flush_queue_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class flush_queue_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
-      public flush_queue_call(String queue_name, org.apache.thrift.async.AsyncMethodCallback<flush_queue_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public flush_queue_call(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<flush_queue_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("flush_queue", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("flush_queue", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         flush_queue_args args = new flush_queue_args();
         args.set_queue_name(queue_name);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public void getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public void getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         (new Client(prot)).recv_flush_queue();
       }
     }
 
-    public void flush_all_queues(org.apache.thrift.async.AsyncMethodCallback<flush_all_queues_call> resultHandler) throws org.apache.thrift.TException {
+    public void flush_all_queues(org.apache.storm.thrift.async.AsyncMethodCallback<flush_all_queues_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       flush_all_queues_call method_call = new flush_all_queues_call(resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class flush_all_queues_call extends org.apache.thrift.async.TAsyncMethodCall {
-      public flush_all_queues_call(org.apache.thrift.async.AsyncMethodCallback<flush_all_queues_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class flush_all_queues_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
+      public flush_all_queues_call(org.apache.storm.thrift.async.AsyncMethodCallback<flush_all_queues_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("flush_all_queues", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("flush_all_queues", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         flush_all_queues_args args = new flush_all_queues_args();
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public void getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public void getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         (new Client(prot)).recv_flush_all_queues();
       }
     }
 
-    public void delete_queue(String queue_name, org.apache.thrift.async.AsyncMethodCallback<delete_queue_call> resultHandler) throws org.apache.thrift.TException {
+    public void delete_queue(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<delete_queue_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       delete_queue_call method_call = new delete_queue_call(queue_name, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class delete_queue_call extends org.apache.thrift.async.TAsyncMethodCall {
+    public static class delete_queue_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
       private String queue_name;
-      public delete_queue_call(String queue_name, org.apache.thrift.async.AsyncMethodCallback<delete_queue_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+      public delete_queue_call(String queue_name, org.apache.storm.thrift.async.AsyncMethodCallback<delete_queue_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.queue_name = queue_name;
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("delete_queue", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("delete_queue", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         delete_queue_args args = new delete_queue_args();
         args.set_queue_name(queue_name);
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public void getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public void getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         (new Client(prot)).recv_delete_queue();
       }
     }
 
-    public void get_version(org.apache.thrift.async.AsyncMethodCallback<get_version_call> resultHandler) throws org.apache.thrift.TException {
+    public void get_version(org.apache.storm.thrift.async.AsyncMethodCallback<get_version_call> resultHandler) throws org.apache.storm.thrift.TException {
       checkReady();
       get_version_call method_call = new get_version_call(resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class get_version_call extends org.apache.thrift.async.TAsyncMethodCall {
-      public get_version_call(org.apache.thrift.async.AsyncMethodCallback<get_version_call> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class get_version_call extends org.apache.storm.thrift.async.TAsyncMethodCall {
+      public get_version_call(org.apache.storm.thrift.async.AsyncMethodCallback<get_version_call> resultHandler, org.apache.storm.thrift.async.TAsyncClient client, org.apache.storm.thrift.protocol.TProtocolFactory protocolFactory, org.apache.storm.thrift.transport.TNonblockingTransport transport) throws org.apache.storm.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
       }
 
-      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
-        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("get_version", org.apache.thrift.protocol.TMessageType.CALL, 0));
+      public void write_args(org.apache.storm.thrift.protocol.TProtocol prot) throws org.apache.storm.thrift.TException {
+        prot.writeMessageBegin(new org.apache.storm.thrift.protocol.TMessage("get_version", org.apache.storm.thrift.protocol.TMessageType.CALL, 0));
         get_version_args args = new get_version_args();
         args.write(prot);
         prot.writeMessageEnd();
       }
 
-      public String getResult() throws org.apache.thrift.TException {
-        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+      public String getResult() throws org.apache.storm.thrift.TException {
+        if (getState() != org.apache.storm.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new IllegalStateException("Method call not finished!");
         }
-        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
-        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        org.apache.storm.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.storm.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.storm.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_get_version();
       }
     }
 
   }
 
-  public static class Processor<I extends Iface> extends org.apache.thrift.TBaseProcessor implements org.apache.thrift.TProcessor {
+  public static class Processor<I extends Iface> extends org.apache.storm.thrift.TBaseProcessor implements org.apache.storm.thrift.TProcessor {
     private static final Logger LOGGER = LoggerFactory.getLogger(Processor.class.getName());
     public Processor(I iface) {
-      super(iface, getProcessMap(new HashMap<String, org.apache.thrift.ProcessFunction<I, ? extends org.apache.thrift.TBase>>()));
+      super(iface, getProcessMap(new HashMap<String, org.apache.storm.thrift.ProcessFunction<I, ? extends org.apache.storm.thrift.TBase>>()));
     }
 
-    protected Processor(I iface, Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
+    protected Processor(I iface, Map<String,  org.apache.storm.thrift.ProcessFunction<I, ? extends  org.apache.storm.thrift.TBase>> processMap) {
       super(iface, getProcessMap(processMap));
     }
 
-    private static <I extends Iface> Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> getProcessMap(Map<String,  org.apache.thrift.ProcessFunction<I, ? extends  org.apache.thrift.TBase>> processMap) {
+    private static <I extends Iface> Map<String,  org.apache.storm.thrift.ProcessFunction<I, ? extends  org.apache.storm.thrift.TBase>> getProcessMap(Map<String,  org.apache.storm.thrift.ProcessFunction<I, ? extends  org.apache.storm.thrift.TBase>> processMap) {
       processMap.put("put", new put());
       processMap.put("get", new get());
       processMap.put("confirm", new confirm());
@@ -636,168 +636,204 @@ public class Kestrel {
       return processMap;
     }
 
-    private static class put<I extends Iface> extends org.apache.thrift.ProcessFunction<I, put_args> {
+    private static class put<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, put_args> {
       public put() {
         super("put");
       }
 
-      protected put_args getEmptyArgsInstance() {
+      public put_args getEmptyArgsInstance() {
         return new put_args();
       }
 
-      protected put_result getResult(I iface, put_args args) throws org.apache.thrift.TException {
+      public put_result getResult(I iface, put_args args) throws org.apache.storm.thrift.TException {
         put_result result = new put_result();
         result.success = iface.put(args.queue_name, args.items, args.expiration_msec);
         result.set_success_isSet(true);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class get<I extends Iface> extends org.apache.thrift.ProcessFunction<I, get_args> {
+    private static class get<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, get_args> {
       public get() {
         super("get");
       }
 
-      protected get_args getEmptyArgsInstance() {
+      public get_args getEmptyArgsInstance() {
         return new get_args();
       }
 
-      protected get_result getResult(I iface, get_args args) throws org.apache.thrift.TException {
+      public get_result getResult(I iface, get_args args) throws org.apache.storm.thrift.TException {
         get_result result = new get_result();
         result.success = iface.get(args.queue_name, args.max_items, args.timeout_msec, args.auto_abort_msec);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class confirm<I extends Iface> extends org.apache.thrift.ProcessFunction<I, confirm_args> {
+    private static class confirm<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, confirm_args> {
       public confirm() {
         super("confirm");
       }
 
-      protected confirm_args getEmptyArgsInstance() {
+      public confirm_args getEmptyArgsInstance() {
         return new confirm_args();
       }
 
-      protected confirm_result getResult(I iface, confirm_args args) throws org.apache.thrift.TException {
+      public confirm_result getResult(I iface, confirm_args args) throws org.apache.storm.thrift.TException {
         confirm_result result = new confirm_result();
         result.success = iface.confirm(args.queue_name, args.ids);
         result.set_success_isSet(true);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class abort<I extends Iface> extends org.apache.thrift.ProcessFunction<I, abort_args> {
+    private static class abort<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, abort_args> {
       public abort() {
         super("abort");
       }
 
-      protected abort_args getEmptyArgsInstance() {
+      public abort_args getEmptyArgsInstance() {
         return new abort_args();
       }
 
-      protected abort_result getResult(I iface, abort_args args) throws org.apache.thrift.TException {
+      public abort_result getResult(I iface, abort_args args) throws org.apache.storm.thrift.TException {
         abort_result result = new abort_result();
         result.success = iface.abort(args.queue_name, args.ids);
         result.set_success_isSet(true);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class peek<I extends Iface> extends org.apache.thrift.ProcessFunction<I, peek_args> {
+    private static class peek<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, peek_args> {
       public peek() {
         super("peek");
       }
 
-      protected peek_args getEmptyArgsInstance() {
+      public peek_args getEmptyArgsInstance() {
         return new peek_args();
       }
 
-      protected peek_result getResult(I iface, peek_args args) throws org.apache.thrift.TException {
+      public peek_result getResult(I iface, peek_args args) throws org.apache.storm.thrift.TException {
         peek_result result = new peek_result();
         result.success = iface.peek(args.queue_name);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class flush_queue<I extends Iface> extends org.apache.thrift.ProcessFunction<I, flush_queue_args> {
+    private static class flush_queue<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, flush_queue_args> {
       public flush_queue() {
         super("flush_queue");
       }
 
-      protected flush_queue_args getEmptyArgsInstance() {
+      public flush_queue_args getEmptyArgsInstance() {
         return new flush_queue_args();
       }
 
-      protected flush_queue_result getResult(I iface, flush_queue_args args) throws org.apache.thrift.TException {
+      public flush_queue_result getResult(I iface, flush_queue_args args) throws org.apache.storm.thrift.TException {
         flush_queue_result result = new flush_queue_result();
         iface.flush_queue(args.queue_name);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class flush_all_queues<I extends Iface> extends org.apache.thrift.ProcessFunction<I, flush_all_queues_args> {
+    private static class flush_all_queues<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, flush_all_queues_args> {
       public flush_all_queues() {
         super("flush_all_queues");
       }
 
-      protected flush_all_queues_args getEmptyArgsInstance() {
+      public flush_all_queues_args getEmptyArgsInstance() {
         return new flush_all_queues_args();
       }
 
-      protected flush_all_queues_result getResult(I iface, flush_all_queues_args args) throws org.apache.thrift.TException {
+      public flush_all_queues_result getResult(I iface, flush_all_queues_args args) throws org.apache.storm.thrift.TException {
         flush_all_queues_result result = new flush_all_queues_result();
         iface.flush_all_queues();
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class delete_queue<I extends Iface> extends org.apache.thrift.ProcessFunction<I, delete_queue_args> {
+    private static class delete_queue<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, delete_queue_args> {
       public delete_queue() {
         super("delete_queue");
       }
 
-      protected delete_queue_args getEmptyArgsInstance() {
+      public delete_queue_args getEmptyArgsInstance() {
         return new delete_queue_args();
       }
 
-      protected delete_queue_result getResult(I iface, delete_queue_args args) throws org.apache.thrift.TException {
+      public delete_queue_result getResult(I iface, delete_queue_args args) throws org.apache.storm.thrift.TException {
         delete_queue_result result = new delete_queue_result();
         iface.delete_queue(args.queue_name);
         return result;
       }
+
+      protected boolean isOneway() {
+        return false;
+      }
     }
 
-    private static class get_version<I extends Iface> extends org.apache.thrift.ProcessFunction<I, get_version_args> {
+    private static class get_version<I extends Iface> extends org.apache.storm.thrift.ProcessFunction<I, get_version_args> {
       public get_version() {
         super("get_version");
       }
 
-      protected get_version_args getEmptyArgsInstance() {
+      public get_version_args getEmptyArgsInstance() {
         return new get_version_args();
       }
 
-      protected get_version_result getResult(I iface, get_version_args args) throws org.apache.thrift.TException {
+      public get_version_result getResult(I iface, get_version_args args) throws org.apache.storm.thrift.TException {
         get_version_result result = new get_version_result();
         result.success = iface.get_version();
         return result;
+      }
+
+      protected boolean isOneway() {
+        return false;
       }
     }
 
   }
 
-  public static class put_args implements org.apache.thrift.TBase<put_args, put_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("put_args");
+  public static class put_args implements org.apache.storm.thrift.TBase<put_args, put_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("put_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
-    private static final org.apache.thrift.protocol.TField ITEMS_FIELD_DESC = new org.apache.thrift.protocol.TField("items", org.apache.thrift.protocol.TType.LIST, (short)2);
-    private static final org.apache.thrift.protocol.TField EXPIRATION_MSEC_FIELD_DESC = new org.apache.thrift.protocol.TField("expiration_msec", org.apache.thrift.protocol.TType.I32, (short)3);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField ITEMS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("items", org.apache.storm.thrift.protocol.TType.LIST, (short)2);
+    private static final org.apache.storm.thrift.protocol.TField EXPIRATION_MSEC_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("expiration_msec", org.apache.storm.thrift.protocol.TType.I32, (short)3);
 
     private String queue_name; // required
     private List<ByteBuffer> items; // required
     private int expiration_msec; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name"),
       ITEMS((short)2, "items"),
       EXPIRATION_MSEC((short)3, "expiration_msec");
@@ -864,18 +900,18 @@ public class Kestrel {
     private static final int __EXPIRATION_MSEC_ISSET_ID = 0;
     private BitSet __isset_bit_vector = new BitSet(1);
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.ITEMS, new org.apache.thrift.meta_data.FieldMetaData("items", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING              , true))));
-      tmpMap.put(_Fields.EXPIRATION_MSEC, new org.apache.thrift.meta_data.FieldMetaData("expiration_msec", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.ITEMS, new org.apache.storm.thrift.meta_data.FieldMetaData("items", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.ListMetaData(org.apache.storm.thrift.protocol.TType.LIST, 
+              new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING              , true))));
+      tmpMap.put(_Fields.EXPIRATION_MSEC, new org.apache.storm.thrift.meta_data.FieldMetaData("expiration_msec", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(put_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(put_args.class, metaDataMap);
     }
 
     public put_args() {
@@ -907,7 +943,7 @@ public class Kestrel {
       if (other.is_set_items()) {
         List<ByteBuffer> __this__items = new ArrayList<ByteBuffer>();
         for (ByteBuffer other_element : other.items) {
-          ByteBuffer temp_binary_element = org.apache.thrift.TBaseHelper.copyBinary(other_element);
+          ByteBuffer temp_binary_element = org.apache.storm.thrift.TBaseHelper.copyBinary(other_element);
 ;
           __this__items.add(temp_binary_element);
         }
@@ -1150,7 +1186,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -1160,7 +1196,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_items()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.items, typedOther.items);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.items, typedOther.items);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -1170,7 +1206,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_expiration_msec()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.expiration_msec, typedOther.expiration_msec);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.expiration_msec, typedOther.expiration_msec);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -1182,27 +1218,27 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 2: // ITEMS
-            if (field.type == org.apache.thrift.protocol.TType.LIST) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.LIST) {
               {
-                org.apache.thrift.protocol.TList _list0 = iprot.readListBegin();
+                org.apache.storm.thrift.protocol.TList _list0 = iprot.readListBegin();
                 this.items = new ArrayList<ByteBuffer>(_list0.size);
                 for (int _i1 = 0; _i1 < _list0.size; ++_i1)
                 {
@@ -1213,19 +1249,19 @@ public class Kestrel {
                 iprot.readListEnd();
               }
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 3: // EXPIRATION_MSEC
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.expiration_msec = iprot.readI32();
               set_expiration_msec_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -1233,7 +1269,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -1245,7 +1281,7 @@ public class Kestrel {
       if (this.items != null) {
         oprot.writeFieldBegin(ITEMS_FIELD_DESC);
         {
-          oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRING, this.items.size()));
+          oprot.writeListBegin(new org.apache.storm.thrift.protocol.TList(org.apache.storm.thrift.protocol.TType.STRING, this.items.size()));
           for (ByteBuffer _iter3 : this.items)
           {
             oprot.writeBinary(_iter3);
@@ -1289,14 +1325,14 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
@@ -1305,23 +1341,23 @@ public class Kestrel {
       try {
         // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
         __isset_bit_vector = new BitSet(1);
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class put_result implements org.apache.thrift.TBase<put_result, put_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("put_result");
+  public static class put_result implements org.apache.storm.thrift.TBase<put_result, put_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("put_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.storm.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("success", org.apache.storm.thrift.protocol.TType.I32, (short)0);
 
     private int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       SUCCESS((short)0, "success");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -1382,13 +1418,13 @@ public class Kestrel {
     private static final int __SUCCESS_ISSET_ID = 0;
     private BitSet __isset_bit_vector = new BitSet(1);
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.storm.thrift.meta_data.FieldMetaData("success", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(put_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(put_result.class, metaDataMap);
     }
 
     public put_result() {
@@ -1528,7 +1564,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_success()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -1540,26 +1576,26 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 0: // SUCCESS
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.success = iprot.readI32();
               set_success_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -1567,7 +1603,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       if (this.is_set_success()) {
@@ -1591,35 +1627,35 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class get_args implements org.apache.thrift.TBase<get_args, get_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("get_args");
+  public static class get_args implements org.apache.storm.thrift.TBase<get_args, get_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("get_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
-    private static final org.apache.thrift.protocol.TField MAX_ITEMS_FIELD_DESC = new org.apache.thrift.protocol.TField("max_items", org.apache.thrift.protocol.TType.I32, (short)2);
-    private static final org.apache.thrift.protocol.TField TIMEOUT_MSEC_FIELD_DESC = new org.apache.thrift.protocol.TField("timeout_msec", org.apache.thrift.protocol.TType.I32, (short)3);
-    private static final org.apache.thrift.protocol.TField AUTO_ABORT_MSEC_FIELD_DESC = new org.apache.thrift.protocol.TField("auto_abort_msec", org.apache.thrift.protocol.TType.I32, (short)4);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField MAX_ITEMS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("max_items", org.apache.storm.thrift.protocol.TType.I32, (short)2);
+    private static final org.apache.storm.thrift.protocol.TField TIMEOUT_MSEC_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("timeout_msec", org.apache.storm.thrift.protocol.TType.I32, (short)3);
+    private static final org.apache.storm.thrift.protocol.TField AUTO_ABORT_MSEC_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("auto_abort_msec", org.apache.storm.thrift.protocol.TType.I32, (short)4);
 
     private String queue_name; // required
     private int max_items; // required
@@ -1627,7 +1663,7 @@ public class Kestrel {
     private int auto_abort_msec; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name"),
       MAX_ITEMS((short)2, "max_items"),
       TIMEOUT_MSEC((short)3, "timeout_msec"),
@@ -1699,19 +1735,19 @@ public class Kestrel {
     private static final int __AUTO_ABORT_MSEC_ISSET_ID = 2;
     private BitSet __isset_bit_vector = new BitSet(3);
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.MAX_ITEMS, new org.apache.thrift.meta_data.FieldMetaData("max_items", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.TIMEOUT_MSEC, new org.apache.thrift.meta_data.FieldMetaData("timeout_msec", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-      tmpMap.put(_Fields.AUTO_ABORT_MSEC, new org.apache.thrift.meta_data.FieldMetaData("auto_abort_msec", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.MAX_ITEMS, new org.apache.storm.thrift.meta_data.FieldMetaData("max_items", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
+      tmpMap.put(_Fields.TIMEOUT_MSEC, new org.apache.storm.thrift.meta_data.FieldMetaData("timeout_msec", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
+      tmpMap.put(_Fields.AUTO_ABORT_MSEC, new org.apache.storm.thrift.meta_data.FieldMetaData("auto_abort_msec", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_args.class, metaDataMap);
     }
 
     public get_args() {
@@ -2021,7 +2057,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2031,7 +2067,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_max_items()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.max_items, typedOther.max_items);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.max_items, typedOther.max_items);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2041,7 +2077,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_timeout_msec()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.timeout_msec, typedOther.timeout_msec);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.timeout_msec, typedOther.timeout_msec);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2051,7 +2087,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_auto_abort_msec()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.auto_abort_msec, typedOther.auto_abort_msec);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.auto_abort_msec, typedOther.auto_abort_msec);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2063,49 +2099,49 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 2: // MAX_ITEMS
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.max_items = iprot.readI32();
               set_max_items_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 3: // TIMEOUT_MSEC
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.timeout_msec = iprot.readI32();
               set_timeout_msec_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 4: // AUTO_ABORT_MSEC
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.auto_abort_msec = iprot.readI32();
               set_auto_abort_msec_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -2113,7 +2149,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -2163,14 +2199,14 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
@@ -2179,23 +2215,23 @@ public class Kestrel {
       try {
         // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
         __isset_bit_vector = new BitSet(1);
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class get_result implements org.apache.thrift.TBase<get_result, get_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("get_result");
+  public static class get_result implements org.apache.storm.thrift.TBase<get_result, get_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("get_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+    private static final org.apache.storm.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("success", org.apache.storm.thrift.protocol.TType.LIST, (short)0);
 
     private List<Item> success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       SUCCESS((short)0, "success");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -2254,14 +2290,14 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
-              new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, Item.class))));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.storm.thrift.meta_data.FieldMetaData("success", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.ListMetaData(org.apache.storm.thrift.protocol.TType.LIST, 
+              new org.apache.storm.thrift.meta_data.StructMetaData(org.apache.storm.thrift.protocol.TType.STRUCT, Item.class))));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_result.class, metaDataMap);
     }
 
     public get_result() {
@@ -2419,7 +2455,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_success()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2431,20 +2467,20 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 0: // SUCCESS
-            if (field.type == org.apache.thrift.protocol.TType.LIST) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.LIST) {
               {
-                org.apache.thrift.protocol.TList _list4 = iprot.readListBegin();
+                org.apache.storm.thrift.protocol.TList _list4 = iprot.readListBegin();
                 this.success = new ArrayList<Item>(_list4.size);
                 for (int _i5 = 0; _i5 < _list4.size; ++_i5)
                 {
@@ -2456,11 +2492,11 @@ public class Kestrel {
                 iprot.readListEnd();
               }
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -2468,13 +2504,13 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       if (this.is_set_success()) {
         oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
         {
-          oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRUCT, this.success.size()));
+          oprot.writeListBegin(new org.apache.storm.thrift.protocol.TList(org.apache.storm.thrift.protocol.TType.STRUCT, this.success.size()));
           for (Item _iter7 : this.success)
           {
             _iter7.write(oprot);
@@ -2503,39 +2539,39 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class confirm_args implements org.apache.thrift.TBase<confirm_args, confirm_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("confirm_args");
+  public static class confirm_args implements org.apache.storm.thrift.TBase<confirm_args, confirm_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("confirm_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
-    private static final org.apache.thrift.protocol.TField IDS_FIELD_DESC = new org.apache.thrift.protocol.TField("ids", org.apache.thrift.protocol.TType.SET, (short)2);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField IDS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("ids", org.apache.storm.thrift.protocol.TType.SET, (short)2);
 
     private String queue_name; // required
     private Set<Long> ids; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name"),
       IDS((short)2, "ids");
 
@@ -2597,16 +2633,16 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.IDS, new org.apache.thrift.meta_data.FieldMetaData("ids", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET, 
-              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64))));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.IDS, new org.apache.storm.thrift.meta_data.FieldMetaData("ids", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.SetMetaData(org.apache.storm.thrift.protocol.TType.SET, 
+              new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I64))));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(confirm_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(confirm_args.class, metaDataMap);
     }
 
     public confirm_args() {
@@ -2820,7 +2856,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2830,7 +2866,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_ids()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.ids, typedOther.ids);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.ids, typedOther.ids);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -2842,27 +2878,27 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 2: // IDS
-            if (field.type == org.apache.thrift.protocol.TType.SET) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.SET) {
               {
-                org.apache.thrift.protocol.TSet _set8 = iprot.readSetBegin();
+                org.apache.storm.thrift.protocol.TSet _set8 = iprot.readSetBegin();
                 this.ids = new HashSet<Long>(2*_set8.size);
                 for (int _i9 = 0; _i9 < _set8.size; ++_i9)
                 {
@@ -2873,11 +2909,11 @@ public class Kestrel {
                 iprot.readSetEnd();
               }
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -2885,7 +2921,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -2897,7 +2933,7 @@ public class Kestrel {
       if (this.ids != null) {
         oprot.writeFieldBegin(IDS_FIELD_DESC);
         {
-          oprot.writeSetBegin(new org.apache.thrift.protocol.TSet(org.apache.thrift.protocol.TType.I64, this.ids.size()));
+          oprot.writeSetBegin(new org.apache.storm.thrift.protocol.TSet(org.apache.storm.thrift.protocol.TType.I64, this.ids.size()));
           for (long _iter11 : this.ids)
           {
             oprot.writeI64(_iter11);
@@ -2934,37 +2970,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class confirm_result implements org.apache.thrift.TBase<confirm_result, confirm_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("confirm_result");
+  public static class confirm_result implements org.apache.storm.thrift.TBase<confirm_result, confirm_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("confirm_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.storm.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("success", org.apache.storm.thrift.protocol.TType.I32, (short)0);
 
     private int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       SUCCESS((short)0, "success");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -3025,13 +3061,13 @@ public class Kestrel {
     private static final int __SUCCESS_ISSET_ID = 0;
     private BitSet __isset_bit_vector = new BitSet(1);
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.storm.thrift.meta_data.FieldMetaData("success", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(confirm_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(confirm_result.class, metaDataMap);
     }
 
     public confirm_result() {
@@ -3171,7 +3207,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_success()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -3183,26 +3219,26 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 0: // SUCCESS
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.success = iprot.readI32();
               set_success_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -3210,7 +3246,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       if (this.is_set_success()) {
@@ -3234,39 +3270,39 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class abort_args implements org.apache.thrift.TBase<abort_args, abort_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("abort_args");
+  public static class abort_args implements org.apache.storm.thrift.TBase<abort_args, abort_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("abort_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
-    private static final org.apache.thrift.protocol.TField IDS_FIELD_DESC = new org.apache.thrift.protocol.TField("ids", org.apache.thrift.protocol.TType.SET, (short)2);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField IDS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("ids", org.apache.storm.thrift.protocol.TType.SET, (short)2);
 
     private String queue_name; // required
     private Set<Long> ids; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name"),
       IDS((short)2, "ids");
 
@@ -3328,16 +3364,16 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.IDS, new org.apache.thrift.meta_data.FieldMetaData("ids", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET, 
-              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I64))));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
+      tmpMap.put(_Fields.IDS, new org.apache.storm.thrift.meta_data.FieldMetaData("ids", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.SetMetaData(org.apache.storm.thrift.protocol.TType.SET, 
+              new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I64))));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(abort_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(abort_args.class, metaDataMap);
     }
 
     public abort_args() {
@@ -3551,7 +3587,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -3561,7 +3597,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_ids()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.ids, typedOther.ids);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.ids, typedOther.ids);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -3573,27 +3609,27 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           case 2: // IDS
-            if (field.type == org.apache.thrift.protocol.TType.SET) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.SET) {
               {
-                org.apache.thrift.protocol.TSet _set12 = iprot.readSetBegin();
+                org.apache.storm.thrift.protocol.TSet _set12 = iprot.readSetBegin();
                 this.ids = new HashSet<Long>(2*_set12.size);
                 for (int _i13 = 0; _i13 < _set12.size; ++_i13)
                 {
@@ -3604,11 +3640,11 @@ public class Kestrel {
                 iprot.readSetEnd();
               }
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -3616,7 +3652,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -3628,7 +3664,7 @@ public class Kestrel {
       if (this.ids != null) {
         oprot.writeFieldBegin(IDS_FIELD_DESC);
         {
-          oprot.writeSetBegin(new org.apache.thrift.protocol.TSet(org.apache.thrift.protocol.TType.I64, this.ids.size()));
+          oprot.writeSetBegin(new org.apache.storm.thrift.protocol.TSet(org.apache.storm.thrift.protocol.TType.I64, this.ids.size()));
           for (long _iter15 : this.ids)
           {
             oprot.writeI64(_iter15);
@@ -3665,37 +3701,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class abort_result implements org.apache.thrift.TBase<abort_result, abort_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("abort_result");
+  public static class abort_result implements org.apache.storm.thrift.TBase<abort_result, abort_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("abort_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.storm.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("success", org.apache.storm.thrift.protocol.TType.I32, (short)0);
 
     private int success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       SUCCESS((short)0, "success");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -3756,13 +3792,13 @@ public class Kestrel {
     private static final int __SUCCESS_ISSET_ID = 0;
     private BitSet __isset_bit_vector = new BitSet(1);
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.storm.thrift.meta_data.FieldMetaData("success", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.I32)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(abort_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(abort_result.class, metaDataMap);
     }
 
     public abort_result() {
@@ -3902,7 +3938,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_success()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -3914,26 +3950,26 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 0: // SUCCESS
-            if (field.type == org.apache.thrift.protocol.TType.I32) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.I32) {
               this.success = iprot.readI32();
               set_success_isSet(true);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -3941,7 +3977,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       if (this.is_set_success()) {
@@ -3965,37 +4001,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class peek_args implements org.apache.thrift.TBase<peek_args, peek_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("peek_args");
+  public static class peek_args implements org.apache.storm.thrift.TBase<peek_args, peek_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("peek_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
 
     private String queue_name; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -4054,13 +4090,13 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(peek_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(peek_args.class, metaDataMap);
     }
 
     public peek_args() {
@@ -4199,7 +4235,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -4211,25 +4247,25 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -4237,7 +4273,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -4266,37 +4302,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class peek_result implements org.apache.thrift.TBase<peek_result, peek_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("peek_result");
+  public static class peek_result implements org.apache.storm.thrift.TBase<peek_result, peek_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("peek_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRUCT, (short)0);
+    private static final org.apache.storm.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("success", org.apache.storm.thrift.protocol.TType.STRUCT, (short)0);
 
     private QueueInfo success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       SUCCESS((short)0, "success");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -4355,13 +4391,13 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, QueueInfo.class)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.storm.thrift.meta_data.FieldMetaData("success", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.StructMetaData(org.apache.storm.thrift.protocol.TType.STRUCT, QueueInfo.class)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(peek_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(peek_result.class, metaDataMap);
     }
 
     public peek_result() {
@@ -4500,7 +4536,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_success()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -4512,26 +4548,26 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 0: // SUCCESS
-            if (field.type == org.apache.thrift.protocol.TType.STRUCT) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRUCT) {
               this.success = new QueueInfo();
               this.success.read(iprot);
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -4539,7 +4575,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       if (this.is_set_success()) {
@@ -4567,37 +4603,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class flush_queue_args implements org.apache.thrift.TBase<flush_queue_args, flush_queue_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("flush_queue_args");
+  public static class flush_queue_args implements org.apache.storm.thrift.TBase<flush_queue_args, flush_queue_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("flush_queue_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
 
     private String queue_name; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -4656,13 +4692,13 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_queue_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_queue_args.class, metaDataMap);
     }
 
     public flush_queue_args() {
@@ -4801,7 +4837,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -4813,25 +4849,25 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -4839,7 +4875,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -4868,35 +4904,35 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class flush_queue_result implements org.apache.thrift.TBase<flush_queue_result, flush_queue_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("flush_queue_result");
+  public static class flush_queue_result implements org.apache.storm.thrift.TBase<flush_queue_result, flush_queue_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("flush_queue_result");
 
 
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
 ;
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -4950,11 +4986,11 @@ public class Kestrel {
         return _fieldName;
       }
     }
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_queue_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_queue_result.class, metaDataMap);
     }
 
     public flush_queue_result() {
@@ -5034,18 +5070,18 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -5053,7 +5089,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       oprot.writeFieldStop();
@@ -5069,35 +5105,35 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class flush_all_queues_args implements org.apache.thrift.TBase<flush_all_queues_args, flush_all_queues_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("flush_all_queues_args");
+  public static class flush_all_queues_args implements org.apache.storm.thrift.TBase<flush_all_queues_args, flush_all_queues_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("flush_all_queues_args");
 
 
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
 ;
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -5151,11 +5187,11 @@ public class Kestrel {
         return _fieldName;
       }
     }
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_all_queues_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_all_queues_args.class, metaDataMap);
     }
 
     public flush_all_queues_args() {
@@ -5235,18 +5271,18 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -5254,7 +5290,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -5271,35 +5307,35 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class flush_all_queues_result implements org.apache.thrift.TBase<flush_all_queues_result, flush_all_queues_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("flush_all_queues_result");
+  public static class flush_all_queues_result implements org.apache.storm.thrift.TBase<flush_all_queues_result, flush_all_queues_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("flush_all_queues_result");
 
 
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
 ;
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -5353,11 +5389,11 @@ public class Kestrel {
         return _fieldName;
       }
     }
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_all_queues_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(flush_all_queues_result.class, metaDataMap);
     }
 
     public flush_all_queues_result() {
@@ -5437,18 +5473,18 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -5456,7 +5492,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       oprot.writeFieldStop();
@@ -5472,37 +5508,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class delete_queue_args implements org.apache.thrift.TBase<delete_queue_args, delete_queue_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("delete_queue_args");
+  public static class delete_queue_args implements org.apache.storm.thrift.TBase<delete_queue_args, delete_queue_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("delete_queue_args");
 
-    private static final org.apache.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.thrift.protocol.TField("queue_name", org.apache.thrift.protocol.TType.STRING, (short)1);
+    private static final org.apache.storm.thrift.protocol.TField QUEUE_NAME_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("queue_name", org.apache.storm.thrift.protocol.TType.STRING, (short)1);
 
     private String queue_name; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       QUEUE_NAME((short)1, "queue_name");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -5561,13 +5597,13 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.thrift.meta_data.FieldMetaData("queue_name", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.QUEUE_NAME, new org.apache.storm.thrift.meta_data.FieldMetaData("queue_name", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(delete_queue_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(delete_queue_args.class, metaDataMap);
     }
 
     public delete_queue_args() {
@@ -5706,7 +5742,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_queue_name()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.queue_name, typedOther.queue_name);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -5718,25 +5754,25 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 1: // QUEUE_NAME
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.queue_name = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -5744,7 +5780,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -5773,35 +5809,35 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class delete_queue_result implements org.apache.thrift.TBase<delete_queue_result, delete_queue_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("delete_queue_result");
+  public static class delete_queue_result implements org.apache.storm.thrift.TBase<delete_queue_result, delete_queue_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("delete_queue_result");
 
 
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
 ;
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -5855,11 +5891,11 @@ public class Kestrel {
         return _fieldName;
       }
     }
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(delete_queue_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(delete_queue_result.class, metaDataMap);
     }
 
     public delete_queue_result() {
@@ -5939,18 +5975,18 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -5958,7 +5994,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       oprot.writeFieldStop();
@@ -5974,35 +6010,35 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class get_version_args implements org.apache.thrift.TBase<get_version_args, get_version_args._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("get_version_args");
+  public static class get_version_args implements org.apache.storm.thrift.TBase<get_version_args, get_version_args._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("get_version_args");
 
 
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
 ;
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -6056,11 +6092,11 @@ public class Kestrel {
         return _fieldName;
       }
     }
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_version_args.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_version_args.class, metaDataMap);
     }
 
     public get_version_args() {
@@ -6140,18 +6176,18 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -6159,7 +6195,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       validate();
 
       oprot.writeStructBegin(STRUCT_DESC);
@@ -6176,37 +6212,37 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
   }
 
-  public static class get_version_result implements org.apache.thrift.TBase<get_version_result, get_version_result._Fields>, java.io.Serializable, Cloneable   {
-    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("get_version_result");
+  public static class get_version_result implements org.apache.storm.thrift.TBase<get_version_result, get_version_result._Fields>, java.io.Serializable, Cloneable   {
+    private static final org.apache.storm.thrift.protocol.TStruct STRUCT_DESC = new org.apache.storm.thrift.protocol.TStruct("get_version_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.STRING, (short)0);
+    private static final org.apache.storm.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.storm.thrift.protocol.TField("success", org.apache.storm.thrift.protocol.TType.STRING, (short)0);
 
     private String success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
-    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+    public enum _Fields implements org.apache.storm.thrift.TFieldIdEnum {
       SUCCESS((short)0, "success");
 
       private static final Map<String, _Fields> byName = new HashMap<String, _Fields>();
@@ -6265,13 +6301,13 @@ public class Kestrel {
 
     // isset id assignments
 
-    public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    public static final Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
-      Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+      Map<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.storm.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.storm.thrift.meta_data.FieldMetaData("success", org.apache.storm.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.storm.thrift.meta_data.FieldValueMetaData(org.apache.storm.thrift.protocol.TType.STRING)));
       metaDataMap = Collections.unmodifiableMap(tmpMap);
-      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_version_result.class, metaDataMap);
+      org.apache.storm.thrift.meta_data.FieldMetaData.addStructMetaDataMap(get_version_result.class, metaDataMap);
     }
 
     public get_version_result() {
@@ -6410,7 +6446,7 @@ public class Kestrel {
         return lastComparison;
       }
       if (is_set_success()) {
-        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
+        lastComparison = org.apache.storm.thrift.TBaseHelper.compareTo(this.success, typedOther.success);
         if (lastComparison != 0) {
           return lastComparison;
         }
@@ -6422,25 +6458,25 @@ public class Kestrel {
       return _Fields.findByThriftId(fieldId);
     }
 
-    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
-      org.apache.thrift.protocol.TField field;
+    public void read(org.apache.storm.thrift.protocol.TProtocol iprot) throws org.apache.storm.thrift.TException {
+      org.apache.storm.thrift.protocol.TField field;
       iprot.readStructBegin();
       while (true)
       {
         field = iprot.readFieldBegin();
-        if (field.type == org.apache.thrift.protocol.TType.STOP) { 
+        if (field.type == org.apache.storm.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (field.id) {
           case 0: // SUCCESS
-            if (field.type == org.apache.thrift.protocol.TType.STRING) {
+            if (field.type == org.apache.storm.thrift.protocol.TType.STRING) {
               this.success = iprot.readString();
             } else { 
-              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+              org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
             }
             break;
           default:
-            org.apache.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
+            org.apache.storm.thrift.protocol.TProtocolUtil.skip(iprot, field.type);
         }
         iprot.readFieldEnd();
       }
@@ -6448,7 +6484,7 @@ public class Kestrel {
       validate();
     }
 
-    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+    public void write(org.apache.storm.thrift.protocol.TProtocol oprot) throws org.apache.storm.thrift.TException {
       oprot.writeStructBegin(STRUCT_DESC);
 
       if (this.is_set_success()) {
@@ -6476,22 +6512,22 @@ public class Kestrel {
       return sb.toString();
     }
 
-    public void validate() throws org.apache.thrift.TException {
+    public void validate() throws org.apache.storm.thrift.TException {
       // check for required fields
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
       try {
-        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
-      } catch (org.apache.thrift.TException te) {
+        write(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
 
     private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
       try {
-        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
-      } catch (org.apache.thrift.TException te) {
+        read(new org.apache.storm.thrift.protocol.TCompactProtocol(new org.apache.storm.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.storm.thrift.TException te) {
         throw new java.io.IOException(te);
       }
     }
