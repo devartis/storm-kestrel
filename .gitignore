@@ -1,12 +1,15 @@
+storm-kestrel.iml
 /classes
 /lib
 deploy/lib
 deploy/logs
+/target/
 .emacs-project
+.idea
+pom.xml
 *.jar
 bin/jzmq
 .DS_Store
-pom.xml
 deploy/classes
 *.fyc
 *.rbc

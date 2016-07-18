@@ -2,6 +2,16 @@ Library to use Kestrel as a spout from within Storm.
 
 This spout uses Kestrel's Thrift API which became available as of Kestrel 2.2. 
 
+## Build
+
+Update version in project.clj and build JAR and POM
+
+```
+lein clean
+lein jar
+lein pom
+```
+
 ## Spout usage
 
 The `KestrelThriftSpout` in this library reads messages off of one or more Kestrel servers. When using the spout, it is recommended that you increase the parallelism of the spout to increase the rate at which you can read messages from Kestrel. 
